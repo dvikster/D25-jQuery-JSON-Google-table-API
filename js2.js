@@ -148,186 +148,146 @@ var arrayData6=[];
 google.load("visualization", "1", {packages:["corechart"]});
 
 google.setOnLoadCallback(drawChart6);
+
 function drawChart6() {
     var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1QnPYekM-2yixobzL-Dw6y5HqaqgPJ_sO6HDU2weUxQw/edit?usp=sharing');
     query.send(handleQueryResponse);
-
 }
+
 function handleQueryResponse(response) {
     var data = response.getDataTable();
+    var chart = new google.visualization.ColumnChart(document.getElementById('chart_div6'));
+    chart.draw(data, null);
+}
+
+
+
+
+
+
+
+
+
+        google.load("visualization", "1", {packages:["corechart"]});
+
+        google.setOnLoadCallback(drawChart5);
+
+
+        console.log('wow2');
+        function drawChart5() {
+            console.log(arrayData);
+            console.log(arrayData1);
+            console.log(arrayData2);
+            console.log(arrayData3);
+            console.log(arrayData4);
+            console.log(arrayData5);
+            console.log(arrayData6);
+            var data = google.visualization.arrayToDataTable([
+                ['Year', 'Sales', 'Expenses'],
+                ['2004',  1000,      400],
+                ['2005',  1170,      460],
+                ['2006',  660,       1120],
+                ['2007',  1030,      540]
+            ]);
+
+            var data = google.visualization.arrayToDataTable(
+
+                [
+                    // ['Year', 'Sales', 'Expenses'],
+                    // ['2004',  1000,      400],
+                    // ['2005',  1170,      460],
+                    // ['2006',  660,       1120],
+                    // ['2007',  1030,      540]
+
+                   [arrayData]
+                 //   [arrayData1],
+                 //    [arrayData3],
+                 //    [arrayData4],
+                 //    [arrayData5],
+                 // [arrayData6]
+
+        ]
+        );
+
+            console.log('data ',data);
+
+            var options = {
+                title: 'Test5'
+            };
+
+            var chart = new google.visualization.ColumnChart(document.getElementById('chart_div5'));
+            chart.draw(data, options);
+        }
+
+    console.log('wow1');
+
+
+
+
+google.load("visualization", "1", {packages:["corechart"]});
+google.setOnLoadCallback(drawChart1);
+function drawChart1() {
+    var data = google.visualization.arrayToDataTable([
+        ['Year', 'Sales', 'Expenses'],
+        ['2004',  1000,      400],
+        ['2005',  1170,      460],
+        ['2006',  660,       1120],
+        ['2007',  1030,      540]
+    ]);
 
     var options = {
-        title: 'Test5'
+        title: 'Company Performance',
+        hAxis: {title: 'Year', titleTextStyle: {color: 'red'}}
     };
-    var chart = new google.visualization.AreaChart(document.getElementById('chart_div6'));
+
+    var chart = new google.visualization.ColumnChart(document.getElementById('chart_div1'));
     chart.draw(data, options);
 }
 
-
-
-google.setOnLoadCallback(drawChart1);
-function drawChart1() {
-    var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1QnPYekM-2yixobzL-Dw6y5HqaqgPJ_sO6HDU2weUxQw/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false');
-    query.send(handleQueryResponse1);
-}
-function handleQueryResponse1(response) {
-    var data = response.getDataTable();
-    var chart = new google.visualization.AreaChart(document.getElementById('chart_div1'));
-    chart.draw(data, null);
-}
-
-
+google.load("visualization", "1", {packages:["corechart"]});
 google.setOnLoadCallback(drawChart2);
 function drawChart2() {
-    var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1HTw_29OePS4DxMK1jLHQi9KXNMvbV9Ss48EpSvgdVck/edit?usp=sharing');
-    query.send(handleQueryResponse2);
-}
-function handleQueryResponse2(response) {
-    var data = response.getDataTable();
-    var chart = new google.visualization.LineChart(document.getElementById('chart_div2'));
-    chart.draw(data, null);
+    var data = google.visualization.arrayToDataTable([
+        ['Year', 'Sales', 'Expenses'],
+        ['2013',  1000,      400],
+        ['2014',  1170,      460],
+        ['2015',  660,       1120],
+        ['2016',  1030,      540]
+    ]);
+
+    var options = {
+        title: 'Company Performance',
+        hAxis: {title: 'Year',  titleTextStyle: {color: '#333'}},
+        vAxis: {minValue: 0}
+    };
+
+    var chart = new google.visualization.AreaChart(document.getElementById('chart_div2'));
+    chart.draw(data, options);
 }
 
+google.load("visualization", "1", {packages:["corechart"]});
 google.setOnLoadCallback(drawChart3);
 function drawChart3() {
-    var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1HTw_29OePS4DxMK1jLHQi9KXNMvbV9Ss48EpSvgdVck/pubchart?oid=490120292&amp;format=interactive?usp=sharing');
-    query.send(handleQueryResponse3);
+    var data = google.visualization.arrayToDataTable([
+        ['name', 'coast'],
+        ['product1', 126],
+        ['product2', 258]
+    ]);
+
+    var options = {
+        title: 'Test'
+    };
+
+    var chart = new google.visualization.ColumnChart(document.getElementById('chart_div3'));
+    chart.draw(data, options);
 }
-function handleQueryResponse3(response) {
-    var data = response.getDataTable();
-    var chart = new google.visualization.PieChart(document.getElementById('chart_div3'));
-    chart.draw(data, null);
-}
-
-
-
-
-
-
-
-
-
-
-//         google.load("visualization", "1", {packages:["corechart"]});
-//
-//         google.setOnLoadCallback(drawChart5);
-//
-//
-//         console.log('wow2');
-//         function drawChart5() {
-//             console.log(arrayData);
-//             console.log(arrayData1);
-//             console.log(arrayData2);
-//             console.log(arrayData3);
-//             console.log(arrayData4);
-//             console.log(arrayData5);
-//             console.log(arrayData6);
-//             var data = google.visualization.arrayToDataTable([
-//                 ['Year', 'Sales', 'Expenses'],
-//                 ['2004',  1000,      400],
-//                 ['2005',  1170,      460],
-//                 ['2006',  660,       1120],
-//                 ['2007',  1030,      540]
-//             ]);
-//
-//             var data = google.visualization.arrayToDataTable(
-//
-//                 [
-//                     // ['Year', 'Sales', 'Expenses'],
-//                     // ['2004',  1000,      400],
-//                     // ['2005',  1170,      460],
-//                     // ['2006',  660,       1120],
-//                     // ['2007',  1030,      540]
-//
-//                    [arrayData]
-//                  //   [arrayData1],
-//                  //    [arrayData3],
-//                  //    [arrayData4],
-//                  //    [arrayData5],
-//                  // [arrayData6]
-//
-//         ]
-//         );
-//
-//             console.log('data ',data);
-//
-//             var options = {
-//                 title: 'Test5'
-//             };
-//
-//             var chart = new google.visualization.ColumnChart(document.getElementById('chart_div5'));
-//             chart.draw(data, options);
-//         }
-//
-//     console.log('wow1');
-//
-//
-//
-//
-// google.load("visualization", "1", {packages:["corechart"]});
-// google.setOnLoadCallback(drawChart1);
-// function drawChart1() {
-//     var data = google.visualization.arrayToDataTable([
-//         ['Year', 'Sales', 'Expenses'],
-//         ['2004',  1000,      400],
-//         ['2005',  1170,      460],
-//         ['2006',  660,       1120],
-//         ['2007',  1030,      540]
-//     ]);
-//
-//     var options = {
-//         title: 'Company Performance',
-//         hAxis: {title: 'Year', titleTextStyle: {color: 'red'}}
-//     };
-//
-//     var chart = new google.visualization.ColumnChart(document.getElementById('chart_div1'));
-//     chart.draw(data, options);
-// }
-//
-// google.load("visualization", "1", {packages:["corechart"]});
-// google.setOnLoadCallback(drawChart2);
-// function drawChart2() {
-//     var data = google.visualization.arrayToDataTable([
-//         ['Year', 'Sales', 'Expenses'],
-//         ['2013',  1000,      400],
-//         ['2014',  1170,      460],
-//         ['2015',  660,       1120],
-//         ['2016',  1030,      540]
-//     ]);
-//
-//     var options = {
-//         title: 'Company Performance',
-//         hAxis: {title: 'Year',  titleTextStyle: {color: '#333'}},
-//         vAxis: {minValue: 0}
-//     };
-//
-//     var chart = new google.visualization.AreaChart(document.getElementById('chart_div2'));
-//     chart.draw(data, options);
-// }
-//
-// google.load("visualization", "1", {packages:["corechart"]});
-// google.setOnLoadCallback(drawChart3);
-// function drawChart3() {
-//     var data = google.visualization.arrayToDataTable([
-//         ['name', 'coast'],
-//         ['product1', 126],
-//         ['product2', 258]
-//     ]);
-//
-//     var options = {
-//         title: 'Test'
-//     };
-//
-//     var chart = new google.visualization.ColumnChart(document.getElementById('chart_div3'));
-//     chart.draw(data, options);
-// }
 
 
 $(window).resize(function(){
     drawChart1();
     drawChart2();
     drawChart3();
-    // drawChart5();
+    drawChart5();
     drawChart6();
 });
 
